@@ -1,7 +1,7 @@
 /*mobile version*/
 
 .page {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     font-family: Arial;
 }
@@ -23,7 +23,7 @@
     border: 4px solid;color: rgb(5, 115, 120);
     ;
     border-radius: 50%;
-    margin: 15px 0px 15px 0px;
+    margin: 20px 0px 0px 0px;
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -35,25 +35,18 @@
     font-size: 20px;
 }
 
+/*  TITEL   */
 .profile-content__category-title {
     color: rgb(5, 115, 120);
 }
 
-.profile-content__category--hidden-mobile {
-    /* display: none; */
-}
-
+/*  ELEMENT BLOCK   */
 .profile-content__element {
     display: flex;
     flex-direction: column;
 }
 
-.profile-content__element--hidden-mobile {
-    display: flex;
-    flex-direction: column;
-    /* display: none; */
-}
-
+/*  TITLE VAN ELEMENT IN DE CATEGORIE   */
 .profile-content__title {
     font-weight: bold;
     font-size: 18px;
@@ -61,10 +54,13 @@
     margin-top: 6px;
 }
 
+/*  TIJDSDUUR VAN CONTENT   */
 .profile-content__period {
     display: none;
+    color: rgb(5, 115, 120);
 }
 
+/*  ONDERSCHRIFT   */
 .profile-content__institute {
     color: rgb(5, 115, 120);
     margin-top: 0px;
@@ -73,41 +69,21 @@
 
 @media only screen and (min-width: 800px) {
 
-    .page {
-        flex-direction: row;
-    }
-
-    .person-name{
-        /* order: -1; */
-    }
-
-    .profile-content__category--hidden-mobile{
-        display: flex;
-        flex-direction: column;
-    }
-
-    /*fix: anders als stipje zichtbaar*/
-    .profile-content__category--hidden-mobile hr{
-        width: 100%;
-    }
-
-    .profile-content__element--hidden-mobile {
-        display: flex;
-    }
-
+      
     .profile-content__element-header{
         display: flex;
         justify-content: space-between;
+        
     }
 
     .profile-content__period {
         font-size: 12px;
-        color: #5c6166;
         display: flex;
+        
     }
 
 }
 
 
-/*student uitwerking*/
+
 
