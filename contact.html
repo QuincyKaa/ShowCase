@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CV Quincy van de Kaa</title>
+        <script defer src="js/app.js"></script>
+        <link rel="stylesheet" href="stylesheets/app.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+
+    <body>
+        <header class="main-header">
+            <nav class="main-header__navigation">
+                <ul class="main-menu">
+                    <li class="main-menu__item"><a class="main-menu__link" a href="profile.html">Profiel</a></li>
+                    <li class="main-menu__item"><a class="main-menu__link" a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="page">
+            <section class="personalia">
+                <img class="person-logo" src="images/it-er.png" alt="">
+                <h1 class="person-name">Quincy van de Kaa</h1>
+            </section>
+
+            <section class="contact_form">
+
+                <section class="contact_form-content">
+
+                    <div class="contact_form-content__category">
+                        <h3 class="contact_form-content__category-title">Wanneer ben ik aanwezig?</h3>
+                        <hr>
+                    </div>
+                    <div class="contact__element">
+                        <div class="presence-box">
+                            <div class="presence">
+                                <p>ma 9-17</p>
+                                <p>di 9-17</p>
+                                <p>wo 9-17</p>
+                                <p>do 9-17</p>
+                                <p>vr 9-15</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="contact_form-content__category">
+                        <h3 class="contact_form-content__category-title">Stuur mij een bericht</h3>
+                    </div>
+                    <form class="contact_form__element">  
+                        <input class="input_field" id="firstname" name="firstname" type="text" placeholder="Voornaam" maxlength="50" minlength="3" required>
+                        <input class="input_field" id="lastname" name="lastname" type="text" placeholder="Achternaam" maxlength="50" minlength="3" required>
+                        <input class="input_field" id="phone_number" name="phone_number" placeholder="Telefoonnummer, format: 06-123545678" type="tel" maxlength="11" minlength="11" pattern="[0-9]{2}-[0-9]{8}" required>
+                        <input class="input_field" id="email" name="email" type="email" placeholder="E-mail" required maxlength="50" minlength="8">
+                        <br>
+                        <input class="input_field" id="subject" name="subject"  type="text" placeholder="Onderwerp van het bericht" maxlength="200" minlength="3" required>
+                        <textarea class="input_field_message" id="message" name="message" type="text" placeholder="Type hier uw bericht" maxlength="600" minlength="3" required></textarea>
+                        <input disabled type="submit" value="Verzend" class="sendButton" id="sendButton">
+                    </form>
+
+                    
+                </section>
+                <section class="gdpr-consent hide">
+
+                    <div class="gdpr-consent__description">
+                        <p>Deze website gebruikt cookies.
+                        We gebruiken cookies om content te personaliseren, voor social media en het analyseren
+                            van verkeer op de website, advertenties.
+                        </p>
+                    </div>
+            
+                    <div class="gdpr-consent__choice">
+                        <button class="gdpr-consent__button--accept">Ja, natuurlijk</button>
+                        <button class="gdpr-consent__button--reject">Nee, misschien later</button>
+                    </div>
+            
+                </section>
+            </section>
+        </div>
+    </body>
+</html>

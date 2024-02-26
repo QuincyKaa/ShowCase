@@ -1,27 +1,48 @@
 /*mobile version*/
 
-.page {
-    /*display: flex;*/
-    flex-direction: column;
-    font-family: Arial;
+/* Header */
+.main-header {
+    position: relative;
+    padding: 20px 10px;
+    background-color: rgb(5, 115, 120);
+    box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.5);
+    border: 3px solid;
+    border-color: black;
+    
+}
+.main-menu{
+    display:flex;
+    list-style: none;
+    padding-left:20px;
+    margin:0;
+    gap: 30px;
+    
+}
+.main-menu__item {
+    font-family: "Poppins", sans-serif;
+    font-size:25px;
+}
+.main-menu__link {
+    text-decoration: none;
+    color: #faf8f8; 
+    transition:200ms color ease-in;
+    font-weight: bold;
+}
+.main-menu__link:hover{
+    color: black;
 }
 
+/* Personalia + image */
 .personalia {
-    background-color: #e7e8ec;
+    background-color: #faf8f8;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-.profile {
-    background-color: #faf8f8;
-    width: 100%;
-}
-
 .person-logo {
-    border: 4px solid;color: rgb(5, 115, 120);
-    ;
+    border: 3px solid;
+    border-color: black;
     border-radius: 50%;
     margin: 20px 0px 0px 0px;
     width: 150px;
@@ -30,15 +51,32 @@
     animation: glow 3s ease alternate;
 }
 
+
+/* de pagina */
+.page {
+    /*display: flex;*/
+    flex-direction: column;
+    font-family: Arial;
+}
+
+/*Profile*/
+.profile {
+    background-color:rgb(5, 115, 120);
+    width: 100%;
+}
+
 .profile-content {
     padding: 15px;
     font-size: 20px;
+    color: #faf8f8;
+    border: 3px solid;
+    border-color: black;
 }
 
-/*  TITEL   */
-.profile-content__category-title {
-    color: rgb(5, 115, 120);
+.profile-content__description{
+    font-size: 16px;
 }
+
 
 /*  ELEMENT BLOCK   */
 .profile-content__element {
@@ -57,14 +95,131 @@
 /*  TIJDSDUUR VAN CONTENT   */
 .profile-content__period {
     display: none;
-    color: rgb(5, 115, 120);
 }
 
 /*  ONDERSCHRIFT   */
 .profile-content__institute {
-    color: rgb(5, 115, 120);
     margin-top: 0px;
     font-size: 14px;
+}
+
+/* contact */
+.contact_form{ /*profile*/
+    background-color: rgb(5, 115, 120);
+    width: 100%;
+}
+.contact_form-content{/*profile content*/
+    padding: 15px;
+    font-size: 20px;
+    color: #faf8f8;
+    border: 3px solid;
+    border-color: black;
+}
+/* element van block */ /*profile-content__element*/
+.contact__element{
+    display: flex;
+    justify-content: center;
+
+}
+.presence{
+    display: flex;
+    flex-direction: column;
+}
+.presence-box{
+    margin-bottom: 50px;
+}
+.contact_form__element{
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.input_field{
+    height: 25px;
+    width: 300px;
+}
+.input_field_message{
+    height: 100px;
+    width: 300px;
+    resize: none;
+
+}
+.sendButton{
+    height: 40px;
+    width:200px;
+    border: 2px solid;
+    border-color: black;
+    font-size:14px;
+}
+.sendButton:enabled:hover{
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+input:invalid {
+    background-color: #fdd;
+}
+textarea:invalid{
+    background-color: #fdd;
+}
+
+/* gdpr */
+.gdpr-consent {
+    background-color: #faf8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    margin: 5px;
+    border: 3px solid black;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.gdpr-consent__description{
+    display: flex;
+    justify-content: center;
+}
+
+.gdpr-consent__choice{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.gdpr-consent__button--accept {
+    background-color: greenyellow;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    transition: background-color 200ms ease-in-out;
+}
+
+.gdpr-consent__button--accept:hover {
+    background-color:#848484 ;
+}
+
+.gdpr-consent__button--reject {
+    background-color: red;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    transition: background-color 200ms ease-in-out;
+}
+.gdpr-consent__button--reject:hover{
+    background-color:#848484 ;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
 }
 
 @media only screen and (min-width: 800px) {
@@ -80,6 +235,18 @@
         font-size: 12px;
         display: flex;
         
+    }
+    /* contact */
+    .presence{
+        gap: 95px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .input_field{
+        width: 700px;
+    }
+    .input_field_message{
+        width: 700px;
     }
 
 }

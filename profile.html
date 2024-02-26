@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <title>CV Quincy van de Kaa</title>
     <link rel="stylesheet" href="stylesheets/app.css">
+    <script defer src="js/app.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
 <body>
-
+    <header class="main-header">
+        <nav class="main-header__navigation">
+            <ul class="main-menu">
+                <li class="main-menu__item"><a class="main-menu__link" a href="profile.html">Profiel</a></li>
+                <li class="main-menu__item"><a class="main-menu__link" a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 <div class="page">
     <section class="personalia">
         <img class="person-logo" src="images/it-er.png" alt="">
@@ -24,8 +32,6 @@
                 <hr>
             </div>
             <div class="profile-content__element">
-                <div class="profile-content__element-header">
-                </div>
                 <p class="profile-content__description">
                     Student aan Hogeschool Windesheim in Zwolle. Ik zit op de HBO-ICT opleiding en heb op deze opleiding met verschillende programmeer talen gewerkt.
                 </p>
@@ -62,7 +68,7 @@
                 <h3 class="profile-content__category-title">Vaardigheden (Opgedaan vanuit school)</h3>
                 <hr>
             </div>
-            <ul>
+            <ul class="vaardigheden">
                 <li>
                     <h4 class="profile-content__title">PHP</h4>
                 </li>
@@ -85,8 +91,22 @@
                     <h4 class="profile-content__title">JavaScript</h4>
                 </li>
             </ul>
-            
-                    
+                                
+        </section>
+        <section class="gdpr-consent hide">
+
+            <div class="gdpr-consent__description">
+                <p>Deze website gebruikt cookies.
+                We gebruiken cookies om content te personaliseren, voor social media en het analyseren
+                    van verkeer op de website, advertenties.
+                </p>
+            </div>
+    
+            <div class="gdpr-consent__choice">
+                <button class="gdpr-consent__button--accept">Ja, natuurlijk</button>
+                <button class="gdpr-consent__button--reject">Nee, misschien later</button>
+            </div>
+    
         </section>
 
     </section>
