@@ -138,11 +138,14 @@
 .input_field{
     height: 25px;
     width: 300px;
+    border: black solid 2px;
 }
 .input_field_message{
     height: 100px;
     width: 300px;
     resize: none;
+    border: black solid 2px;
+
 
 }
 .sendButton{
