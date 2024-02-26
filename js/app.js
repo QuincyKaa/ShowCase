@@ -107,3 +107,23 @@ class Validation {
 }
 
 const validation = new Validation()
+
+const form = document.getElementById("contact-form");
+form.addEventListener("submit", sendMail);
+
+async function sendMail(e) {
+  e.preventDefault();
+
+  const mail = {
+    header:{
+      sender: form.querySelector("#email").value,
+      senderName: form.querySelector("#name").value
+    },
+    body:{
+      subject: form.querySelector("#subject").value,
+      message: form.querySelector("#message").value
+    } 
+  }
+  form.reset();
+  const response = await fetch("https://localhost:7176/api/ContactVerzoek", { method: "POST", mode: 'cors', headers: new Headers({'content-type': 'application/json'}), body:JSON.stringify(mail) });
+}
