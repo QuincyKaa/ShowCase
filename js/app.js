@@ -47,9 +47,7 @@ const gdpr = new GDPR()
 class Validation {
   constructor () {
     this.validationResults = {
-      firstname: false,
-      lastname: false,
-      phone_number: false,
+      name: false,
       email: false,
       subject: false,
       message: false
@@ -59,7 +57,7 @@ class Validation {
   }
 
   setupEventListeners () {
-    const fields = ['firstname', 'lastname', 'phone_number', 'subject', 'message']
+    const fields = ['name', 'subject', 'message']
 
     fields.forEach(field => {
       const item = document.getElementById(field)
