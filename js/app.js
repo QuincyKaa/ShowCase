@@ -126,6 +126,13 @@ async function sendMail(e) {
     } 
   }
   form.reset();
+  validation.validationResults = {
+    name: false,
+    email: false,
+    subject: false,
+    message: false
+  }
+  validation.updateSendButton();
   let result = "";
   try {
     result = await (await fetch("https://localhost:7176/api/ContactVerzoek", { method: "POST", mode: 'cors', headers: new Headers({'content-type': 'application/json'}), body:JSON.stringify(mail) })).text();
@@ -137,5 +144,6 @@ async function sendMail(e) {
   Tekstveld.innerHTML = result;
 
   document.querySelector('#Tekstveld').classList.remove('hide')
+
   
 }
