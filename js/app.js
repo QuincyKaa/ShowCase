@@ -53,15 +53,16 @@ class Validation {
       message: false
     }
 
+
     this.setupEventListeners()
   }
 
   setupEventListeners () {
     const fields = ['name', 'subject', 'message']
-
+    
     fields.forEach(field => {
-      const item = document.getElementById(field)
-      item.addEventListener('input', () => {
+      const item = document.getElementById(field) ?? null;
+      if( item != null) item.addEventListener('input', () => {
         if (!item.checkValidity()) {
           item.reportValidity()
           this.validationResults[field] = false
@@ -74,8 +75,8 @@ class Validation {
     })
 
     // Email validation logic using browser's built-in validation
-    const email = document.getElementById('email')
-    email.addEventListener('input', () => {
+    const email = document.getElementById('email') ?? null;
+    if( email != null) email.addEventListener('input', () => {
       if (!email.checkValidity()) {
         if (email.value.indexOf('@') === -1) {
           email.setCustomValidity(`Vul een geldig e-mail adres in van ${email.minLength} tot en met ${email.maxLength} karakters`)
@@ -108,8 +109,8 @@ class Validation {
 
 const validation = new Validation()
 
-const form = document.getElementById("contact-form");
-form.addEventListener("submit", sendMail);
+const form = document.getElementById("contact-form") ?? null;
+if(form != null) form.addEventListener("submit", sendMail);
 
 async function sendMail(e) {
   e.preventDefault();
@@ -125,5 +126,16 @@ async function sendMail(e) {
     } 
   }
   form.reset();
-  const response = await fetch("https://localhost:7176/api/ContactVerzoek", { method: "POST", mode: 'cors', headers: new Headers({'content-type': 'application/json'}), body:JSON.stringify(mail) });
+  let result = "";
+  try {
+    result = await (await fetch("https://localhost:7176/api/ContactVerzoek", { method: "POST", mode: 'cors', headers: new Headers({'content-type': 'application/json'}), body:JSON.stringify(mail) })).text();
+  } catch(error) {
+    result = "Het verzenden is niet gelukt, probeer het later opnieuw";
+  }
+  let Tekstveld = document.querySelector("#Tekstveld")
+
+  Tekstveld.innerHTML = result;
+
+  document.querySelector('#Tekstveld').classList.remove('hide')
+  
 }

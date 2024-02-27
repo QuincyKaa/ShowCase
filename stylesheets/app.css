@@ -129,6 +129,22 @@
 .presence-box{
     margin-bottom: 50px;
 }
+
+.ContainerTekst{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+.Tekstveld{
+    border: black solid 2px;
+    background-color: #faf8f8;
+    color: black;
+    height: 25px;
+    width: 500px;
+    font-size: 15px;
+}
+
 .contact_form__element{
     gap: 10px;
     display: flex;
@@ -148,6 +164,7 @@
 
 
 }
+
 .sendButton{
     height: 40px;
     width:200px;
