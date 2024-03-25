@@ -50,7 +50,8 @@ class Validation {
       name: false,
       email: false,
       subject: false,
-      message: false
+      message: false,
+      captcha:false
     }
 
 
@@ -93,6 +94,8 @@ class Validation {
     })
   }
 
+
+
   /* checks if the button can be enabled */
   updateSendButton () {
     const sendButton = document.getElementById('sendButton')
@@ -108,6 +111,11 @@ class Validation {
 }
 
 const validation = new Validation()
+
+function recaptchaCallback() {
+  validation.validationResults.captcha = true;
+  validation.updateSendButton()
+}
 
 const form = document.getElementById("contact-form") ?? null;
 if(form != null) form.addEventListener("submit", sendMail);
