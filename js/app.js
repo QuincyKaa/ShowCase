@@ -143,8 +143,10 @@ async function sendMail(e) {
   validation.updateSendButton();
   let result = "";
   try {
-    result = await (await fetch(`http://localhost:5080/api/ContactVerzoek`, { method: "POST", mode: 'cors', headers: new Headers({'content-type': 'application/json'}), body:JSON.stringify(mail) })).text();
+    console.log("gelukt")
+    result = await (await fetch(`http://backend:8080/api/ContactVerzoek`, { method: "POST", mode: 'cors', headers: new Headers({'content-type': 'application/json'}), body:JSON.stringify(mail) })).text();
   } catch(error) {
+    console.log(error)
     result = "Het verzenden is niet gelukt, probeer het later opnieuw";
   }
   let Tekstveld = document.querySelector("#Tekstveld")
