@@ -143,6 +143,7 @@ async function sendMail(e) {
   validation.updateSendButton();
   let result = "";
   try {
+    console.log("het werkt met docker")
     result = await (await fetch(`http://localhost:5080/api/ContactVerzoek`, {
     method: "POST",
     mode: 'cors',
