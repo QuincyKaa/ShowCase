@@ -75,7 +75,6 @@ class Validation {
       })
     })
 
-    // Email validation logic using browser's built-in validation
     const email = document.getElementById('email') ?? null;
     if( email != null) email.addEventListener('input', () => {
       if (!email.checkValidity()) {
@@ -84,7 +83,7 @@ class Validation {
         } else {
           email.setCustomValidity('')
         }
-        email.reportValidity() // Explicitly call reportValidity to show the custom validity message
+        email.reportValidity() 
         this.validationResults.email = false
       } else {
         email.setCustomValidity('')
@@ -96,11 +95,9 @@ class Validation {
 
 
 
-  /* checks if the button can be enabled */
   updateSendButton () {
     const sendButton = document.getElementById('sendButton')
 
-    // Enable the button if all conditions are true, otherwise disable it
     const isValid = Object.values(this.validationResults).every(result => result === true)
     if (isValid) {
       sendButton.removeAttribute('disabled')
